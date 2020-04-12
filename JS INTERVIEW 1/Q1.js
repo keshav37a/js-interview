@@ -8,22 +8,19 @@ Array.prototype.customMap = function(passedFunction) {
 
 //  3.Creating a new array to store the results 
     let newArr = [];
-    for (i = 0; i < this.length; i++) {
 
 //  4.Iterating through the array using this(current object)
+    for (i = 0; i < this.length; i++) {
 
-
-//  5.Calling the passed Function and passing the parameters as value and index
-
-//  6.Storing the returned value in the newArray
+//  5.Calling the passed Function and passing the parameters as value and index and storing the returned value in the new array
         newArr.push(passedFunction(this[i], i));
     }
 
 //  7.Returning the new Array
-
     return newArr;
 };
 
+//  8.Testing the customMap function
 
 let arr = [11,22,33,44,55];
 
@@ -35,5 +32,10 @@ let result2 = arr.customMap((item, index)=>{
     return {'index': item, 'item': item};
 });
 
+let result3 = arr.customMap((item, index)=>{
+    return item*item;
+});
+
 console.log(result1);
 console.log(result2);
+console.log(result3);
