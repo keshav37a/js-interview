@@ -1,24 +1,23 @@
-// Implement LinkedList class in JS.
+// Implement Stack class in JS.
 
 
-//Creating a linked list class
+//Creating a Stack class
 class Stack{
 
     constructor(){
         this.arr = [];
-        this.front = 0;
         this.size = 0;
         this.top = -1;
     }
 
-    //method to add a new element in a list
+    //method to push a new element in a Stack
     push(num){
         this.arr.unshift(num);
         this.size +=1;
         this.top = num;
     }
 
-    //method to display elements in a list
+    //method to display elements in a Stack
     displayStackElements(){
         let str = ""
         this.arr.forEach(element =>{
