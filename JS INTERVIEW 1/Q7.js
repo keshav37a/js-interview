@@ -44,6 +44,7 @@
 
     result = '1';
 
+    
     solveDataStructures()
         .then(function(result){
             return addNewFeatureToWebApp(result)
@@ -53,6 +54,12 @@
                 console.log(result + 'Finished with the day');
             });
         })
+    })
+
+
+    //Code to execute if even one of the tasks finish
+    Promise.race([solveDataStructures(), addNewFeatureToWebApp(), relaxAndNetflix()]).then(function(){
+        console.log('One of them finished');
     })
 
 
